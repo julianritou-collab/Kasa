@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-family;
+  background-color: $background-white;
+  color: $text-color;
+  min-width: 320px;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @media (max-width: $mobile) {
+    padding: 0 $container-padding-mobile;
+  }
+
+}

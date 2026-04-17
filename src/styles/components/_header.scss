@@ -1,0 +1,44 @@
+@use '../base/variables' as *;
+
+header {
+  background-color: $background-white;
+  padding: 50px 0;
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $mobile-very-small) {
+        flex-direction: column;
+        gap: 20px;
+    }
+  }
+
+  .header__logo {
+    max-height: 68px;
+    @media (max-width: $mobile) {
+      max-height: 46px;
+    }
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 57px;
+    @media (max-width: $mobile) {
+      gap: 26px;
+    }
+    a {
+      font-size: 24px;
+      font-weight: 500;
+      color: $text-color;
+      text-decoration: none;
+      @media (max-width: $mobile) {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
