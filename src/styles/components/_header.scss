@@ -3,7 +3,10 @@
 header {
   background-color: $background-white;
   padding: 50px 0;
-
+  transition: padding 0.3s ease-in-out;
+  @media (max-width: $mobile) {
+    padding: 20px 0;
+  }
   .header__inner {
     display: flex;
     justify-content: space-between;
@@ -16,6 +19,7 @@ header {
 
   .header__logo {
     max-height: 68px;
+    transition: max-height 0.3s ease-in-out;
     @media (max-width: $mobile) {
       max-height: 46px;
     }
