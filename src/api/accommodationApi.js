@@ -19,6 +19,6 @@ export function getAccommodationById(id) {
       } else {
         reject(new Error("Logement non trouvé"));
       }
-    }, 150); // simule un vrai appel API
+    }, 1500); // simule un vrai appel API
   });
 }
