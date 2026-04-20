@@ -1,9 +1,12 @@
 // Base
 @use './base/variables' as *;
+@use 'base/mixins' as *;
 @use 'base/reset';
 @use 'base/base';
 
+
 // Composants
+@use 'components/banner';
 @use 'components/header';
 @use 'components/footer';
 @use 'components/spinner';

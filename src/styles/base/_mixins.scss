@@ -1,0 +1,11 @@
+@mixin text-outline($color: black, $size: 1px) {
+  @if $size == 0 {
+    text-shadow: none;
+  } @else {
+    text-shadow:
+      #{-$size} #{-$size} 0 $color,
+      #{$size}  #{-$size} 0 $color,
+      #{-$size}  #{$size} 0 $color,
+      #{$size}   #{$size} 0 $color;
+  }
+}
