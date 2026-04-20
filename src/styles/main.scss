@@ -7,10 +7,12 @@
 
 // Composants
 @use 'components/banner';
+@use 'components/card';
 @use 'components/header';
 @use 'components/footer';
 @use 'components/spinner';
 
 
 // Pages
+@use 'pages/home';
 @use 'pages/not-found';

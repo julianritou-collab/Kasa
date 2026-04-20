@@ -1,0 +1,23 @@
+@use '../base/variables' as *;
+
+.home__gallery {
+  background-color: $background-color;
+  border-radius: 25px;
+  padding: 55px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 55px);
+  margin: 43px 0;
+
+  //because 3 colonnes c'est moche sur les écrans moyens
+  @media (max-width: $tablet) {
+     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $mobile) {
+    margin: 30px 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+    background-color: transparent;
+  }
+}

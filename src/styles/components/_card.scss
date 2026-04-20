@@ -1,0 +1,34 @@
+@use '../base/variables' as *;
+
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 340px;
+  display: block;
+  text-decoration: none;
+  
+  @media (max-width: $mobile) {
+    height: 255px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: $background-white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 80%;
+    border-radius: 5px;
+    padding:5px;
+  }
+}
