@@ -1,10 +1,11 @@
-function Banner({ titles = [], image, opacity = 0.6 }) {
+function Banner({ titles = [], image, opacity = 0.6, titleHidden = false }) {
   return (
     <div
       className="hulk"
       style={{ backgroundImage: `url(${image})`, '--banner-opacity': opacity }}
+      role="banner"
     >
-      <h1 className="hulk__title">
+      <h1 className={`hulk__title${titleHidden ? " sr-only" : ""}`}>
         {titles.map((line, index) => (
           <span key={index}>
             {index > 0 && <span className="newline-mobile"> </span>}
