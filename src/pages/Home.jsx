@@ -19,14 +19,17 @@ function Home() {
       />
       <section className="home__gallery">
         <h2 className="sr-only">Nos logements</h2>
-        {accommodations.map((accommodation) => (
-          <Card
-            key={accommodation.id}
-            id={accommodation.id}
-            title={accommodation.title}
-            cover={accommodation.cover}
-          />
-        ))}
+        <ul className="home__list">
+          {accommodations.map((accommodation) => (
+            <li key={accommodation.id}>
+              <Card
+                id={accommodation.id}
+                title={accommodation.title}
+                cover={accommodation.cover}
+              />
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );
