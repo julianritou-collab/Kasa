@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAccommodationById } from "../api/accommodationApi";
 import Spinner from "../components/Spinner";
+import Slideshow from "../components/Slideshow";
 
 function Accommodation() {
   const { id } = useParams();
@@ -22,8 +23,11 @@ function Accommodation() {
     return <Spinner />;
   }
 
-
-  return <h1>Fiche logement "{accommodation.title}"</h1>;
+  return (
+  <section className="accommodation">
+    <Slideshow pictures={accommodation.pictures} title={accommodation.title} />
+  </section>
+);
 }
 
 export default Accommodation;
