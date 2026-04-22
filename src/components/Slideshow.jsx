@@ -19,7 +19,23 @@ function Slideshow({ pictures = [] , title = "" }) {
 
   return (
     <div className="slideshow" aria-label={`Diaporama de ${title}`}>
-      <img src={pictures[currentIndex]} alt={`${title} - Image ${currentIndex + 1} sur ${totalPictures}`} className="slideshow__image" />
+      <div
+        className="slideshow__track"
+        style={{
+          // Déplace horizontalement la piste de 1 slide (100%) à chaque index.
+          transform: "translateX(-" + currentIndex * 100 + "%)",
+        }}
+      >
+        {pictures.map((picture, index) => (
+          <div className="slideshow__slide" key={`${picture}-${index}`}>
+            <img
+              src={picture}
+              alt={`${title} - Image ${index + 1} sur ${totalPictures}`}
+              className="slideshow__image"
+            />
+          </div>
+        ))}
+      </div>
       {hasMultiplePictures && (
         <>
           <button 
