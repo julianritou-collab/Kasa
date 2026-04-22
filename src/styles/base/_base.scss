@@ -26,7 +26,7 @@ main {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 $container-padding;
-  transition: padding 0.3s ease-in-out;
+  transition: padding $anim-duration ease-in-out;
 
   @media (max-width: $mobile) {
     padding: 0 $container-padding-mobile;

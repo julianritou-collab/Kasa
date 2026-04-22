@@ -3,7 +3,7 @@
 header {
   background-color: $background-white;
   padding: 50px 0;
-  transition: padding 0.3s ease-in-out;
+  transition: padding $anim-duration ease-in-out;
   @media (max-width: $mobile) {
     padding: 20px 0;
   }
@@ -19,7 +19,7 @@ header {
 
   .header__logo {
     max-height: 68px;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height $anim-duration ease-in-out;
     @media (max-width: $mobile) {
       max-height: 46px;
     }
