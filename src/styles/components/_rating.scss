@@ -1,0 +1,23 @@
+@use '../base/variables' as *;
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  @media (max-width: $mobile) {
+    gap: 2px;
+  }
+}
+
+.rating__star {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  @media (max-width: $mobile) {
+    width: 18px;
+    height: 18px;
+  }
+}

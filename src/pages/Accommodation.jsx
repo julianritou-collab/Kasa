@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getAccommodationById } from "../api/accommodationApi";
 import Spinner from "../components/Spinner";
 import Slideshow from "../components/Slideshow";
+import Rating from "../components/Rating";
 
 function Accommodation() {
   const { id } = useParams();
@@ -26,6 +27,7 @@ function Accommodation() {
   return (
   <section className="accommodation">
     <Slideshow pictures={accommodation.pictures} title={accommodation.title} />
+    <Rating value={accommodation.rating} />
   </section>
 );
 }
