@@ -5,6 +5,7 @@ import Spinner from "../components/Spinner";
 import Slideshow from "../components/Slideshow";
 import Rating from "../components/Rating";
 import Host from "../components/Host";
+import TagList from "../components/TagList";
 
 function Accommodation() {
   const { id } = useParams();
@@ -30,6 +31,7 @@ function Accommodation() {
     <Slideshow pictures={accommodation.pictures} title={accommodation.title} />
     <Rating value={accommodation.rating} />
     <Host name={accommodation.host.name} picture={accommodation.host.picture} />
+    <TagList tags={accommodation.tags} />
   </section>
 );
 }
