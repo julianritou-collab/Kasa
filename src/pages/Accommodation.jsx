@@ -4,6 +4,7 @@ import { getAccommodationById } from "../api/accommodationApi";
 import Spinner from "../components/Spinner";
 import Slideshow from "../components/Slideshow";
 import Rating from "../components/Rating";
+import Host from "../components/Host";
 
 function Accommodation() {
   const { id } = useParams();
@@ -28,6 +29,7 @@ function Accommodation() {
   <section className="accommodation">
     <Slideshow pictures={accommodation.pictures} title={accommodation.title} />
     <Rating value={accommodation.rating} />
+    <Host name={accommodation.host.name} picture={accommodation.host.picture} />
   </section>
 );
 }
