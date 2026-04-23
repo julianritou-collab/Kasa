@@ -6,6 +6,7 @@ import Slideshow from "../components/Slideshow";
 import Rating from "../components/Rating";
 import Host from "../components/Host";
 import TagList from "../components/TagList";
+import Collapse from "../components/Collapse";
 
 function Accommodation() {
   const { id } = useParams();
@@ -32,6 +33,19 @@ function Accommodation() {
     <Rating value={accommodation.rating} />
     <Host name={accommodation.host.name} picture={accommodation.host.picture} />
     <TagList tags={accommodation.tags} />
+    <div className="accommodation__collapses">
+      <Collapse title="Description">
+        <p>{accommodation.description}</p>
+      </Collapse>
+
+      <Collapse title="Équipements">
+        <ul>
+          {accommodation.equipments.map((equipment) => (
+            <li key={equipment}>{equipment}</li>
+          ))}
+        </ul>
+      </Collapse>
+    </div>
   </section>
 );
 }

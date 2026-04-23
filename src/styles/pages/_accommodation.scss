@@ -1,0 +1,41 @@
+@use '../base/variables' as *;
+
+.accommodation__collapses {
+  display: flex;
+  gap: clamp(20px, calc(100% * 76 / 1240), 76px); 
+
+  > * {
+    flex: 1 1 0; 
+    // flex-grow: 1 permet aux collapses de s'étendre en Largeur (flex row).
+    // flex-shrink: 1 pour permettre aux collapses de rétrécir en largeur si nécessaire (flex row)
+    // flex-basis: 0 pour que les collapses prennent une largeur égale avant de s'étendre ou de rétrécir (flex row)
+  }
+
+   @media (max-width: $mobile) {
+     flex-direction: column;
+     gap: 20px;
+
+     > * {
+      flex: 0 0 auto; 
+      // flex-grow: 0 pour empêcher les collapses de s'étendre en Hauteur (flex column).
+      // flex-shrink: 0 pour empêcher les collapses de rétrécir en hauteur (flex column).
+      // flex-basis: auto pour que les collapses prennent la Hauteur de leur contenu (flex column).
+     }
+   }
+
+  .collapse {
+    border-radius: 10px;
+  }
+
+  .collapse__header {
+    border-radius: 10px;
+  }
+
+  .collapse--open .collapse__header {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .collapse__body {
+    border-radius: 0 0 10px 10px;
+  }
+}
