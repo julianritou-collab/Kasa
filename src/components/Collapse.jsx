@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 
 function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,11 +7,17 @@ function Collapse({ title, children }) {
 
   // Met à jour la hauteur du corps du collapse lorsque les enfants changent
   // pour permettre une transition fluide à l'ouverture.
-  useEffect(() => {
-    if (bodyRef.current) {
-      setHeight(bodyRef.current.scrollHeight);
-    }
-  }, [children]);
+  useLayoutEffect(() => {
+   const updateHeight = () => { 
+      if (bodyRef.current) {
+        setHeight(bodyRef.current.scrollHeight); 
+      }
+    };
+    updateHeight();
+    // Met à jour la hauteur aussi pour s'adapter à d'éventuels changements de layout
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [children, isOpen]); // Recalcule la hauteur à chaque changement de contenu ou d'état d'ouverture
 
   return (
     <div className={`collapse${isOpen ? " collapse--open" : ""}`}>
