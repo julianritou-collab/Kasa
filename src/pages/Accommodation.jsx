@@ -30,14 +30,23 @@ function Accommodation() {
   return (
   <section className="accommodation">
     <Slideshow pictures={accommodation.pictures} title={accommodation.title} />
-    <Rating value={accommodation.rating} />
-    <Host name={accommodation.host.name} picture={accommodation.host.picture} />
-    <TagList tags={accommodation.tags} />
+    <div className="accommodation__summary">
+      <div className="accommodation__left">
+        <div className="accommodation__title-and-location">
+          <h1 className="accommodation__title">{accommodation.title}</h1>
+          <p className="accommodation__location">{accommodation.location}</p>
+        </div>
+        <TagList tags={accommodation.tags} />
+      </div>
+      <div className="accommodation__right">
+        <Host name={accommodation.host.name} picture={accommodation.host.picture} />
+        <Rating value={accommodation.rating} />
+      </div>
+    </div>
     <div className="accommodation__collapses">
       <Collapse title="Description">
         <p>{accommodation.description}</p>
       </Collapse>
-
       <Collapse title="Équipements">
         <ul>
           {accommodation.equipments.map((equipment) => (

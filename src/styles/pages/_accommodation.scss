@@ -1,5 +1,84 @@
 @use '../base/variables' as *;
 
+.accommodation {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 50px;
+  @media (max-width: $mobile) {
+    gap:12px;
+    margin-bottom: 25px;
+    &__title-and-location {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+}
+
+.accommodation__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.accommodation__left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  @media (max-width: $mobile) {
+    gap:10px;
+  }
+}
+
+.accommodation__title {
+  margin: 0;
+  color: $primary-color;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 143%;
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+  }
+}
+
+.accommodation__location {
+  margin: 0;
+  color: $text-color;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 143%;
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+.accommodation__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 21px;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
 .accommodation__collapses {
   display: flex;
   gap: clamp(20px, calc(100% * 76 / 1240), 76px); 
@@ -29,7 +108,15 @@
 
   .collapse__header {
     border-radius: 10px;
+
   }
+
+  .collapse__title {
+    font-size: 18px;
+    @media (max-width: $mobile) {
+       font-size: 13px;
+    }
+  }  
 
   .collapse--open .collapse__header {
     border-radius: 10px 10px 0 0;
