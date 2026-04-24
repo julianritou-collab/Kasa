@@ -104,11 +104,16 @@
 
   .collapse {
     border-radius: 10px;
+    @media (max-width: $mobile) {
+      border-radius: 5px;    
+    }
   }
 
   .collapse__header {
     border-radius: 10px;
-
+    @media (max-width: $mobile) {
+      border-radius: 5px;    
+    }
   }
 
   .collapse__title {
@@ -120,9 +125,15 @@
 
   .collapse--open .collapse__header {
     border-radius: 10px 10px 0 0;
+    @media (max-width: $mobile) {
+      border-radius: 5px 5px 0 0;    
+    }
   }
 
   .collapse__body {
     border-radius: 0 0 10px 10px;
+    @media (max-width: $mobile) {
+      border-radius: 0 0 5px 5px;    
+    }
   }
 }
