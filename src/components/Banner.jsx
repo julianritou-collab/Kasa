@@ -3,7 +3,6 @@ function Banner({ titles = [], image, opacity = 0.6, titleHidden = false }) {
     <div
       className="hulk"
       style={{ backgroundImage: `url(${image})`, '--banner-opacity': opacity }}
-      role="banner"
     >
       <h1 className={`hulk__title${titleHidden ? " sr-only" : ""}`}>
         {titles.map((line, index) => (

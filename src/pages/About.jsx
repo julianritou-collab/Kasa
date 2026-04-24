@@ -18,7 +18,7 @@ function About() {
         opacity={0.3}
         titleHidden={true}
       />
-      <section className="about__values">
+      <section className="about__values" aria-label="Nos valeurs">
         {kasaValues.map((item) => (
           <Collapse key={item.title} title={item.title}>
             <p>{item.content}</p>

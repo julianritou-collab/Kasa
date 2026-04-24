@@ -5,7 +5,7 @@ export function getAccommodations() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(logements);
-    }, 150); // simule un vrai appel API
+    }, 250); // simule un vrai appel API
   });
 }
 
@@ -19,6 +19,6 @@ export function getAccommodationById(id) {
       } else {
         reject(new Error("Logement non trouvé"));
       }
-    }, 1500); // simule un vrai appel API
+    }, 250); // simule un vrai appel API
   });
 }
