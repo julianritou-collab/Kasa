@@ -14,19 +14,24 @@ Kasa est une application web de location d’hébergements, développée avec Re
 1. Clone le dépôt :
 
     ```bash
-    git clone [https://github.com/julianritou-collab/Kasa.git](https://github.com/julianritou-collab/Kasa.git) cd Kasa
+    git clone https://github.com/julianritou-collab/Kasa.git cd Kasa
+    
 
 2. Installation des dépendances
 
+    ```bash
     npm install
 
 3. Lancer le serveur de développement
 
+    ```bash
     npm run dev
 
 4. Ouvrir [http://localhost:5173](http://localhost:5173) dans ton navigateur.
 
-    ou o (open) après commande npm run dev
+    ou o (open) après commande npm run dev :
+    ```bash
+    o
 
 ## Scripts utiles
 
@@ -37,6 +42,7 @@ Kasa est une application web de location d’hébergements, développée avec Re
 
 ## Structure du projet
 
+```
 Kasa/
 ├── public/
 │   ├── favicon.svg
@@ -103,6 +109,7 @@ Kasa/
 ├── package.json
 ├── README.md
 └── vite.config.js
+```
 
 ## Dépendances principales
 
