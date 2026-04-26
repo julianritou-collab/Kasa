@@ -23,8 +23,14 @@ function Accommodation() {
       .finally(() => setLoading(false));
   }, [id, navigate]);
 
+
   if (loading) {
     return <Spinner />;
+  }
+
+  //correction pb quand je suis déja sur la page d'un logement et que je modifie l'Id dans l'url.
+  if (!accommodation) {
+    return null; 
   }
 
   return (
