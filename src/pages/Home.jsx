@@ -1,11 +1,15 @@
-import { useLoaderData } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { getAccommodations } from "../api/accommodationApi";
 import Banner from "../components/Banner";
 import homeBanner from "../assets/home-banner.webp";
 import Card from "../components/Card";
 
 function Home() {
-  const { accommodations } = useLoaderData();
+  const [accommodations, setAccommodations] = useState([]);
+
+  useEffect(() => {
+    getAccommodations().then((data) => setAccommodations(data));
+  }, []);
 
   return (
     <>
