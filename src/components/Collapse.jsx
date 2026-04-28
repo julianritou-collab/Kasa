@@ -14,8 +14,10 @@ function Collapse({ title, children }) {
   // pour permettre une transition fluide à l'ouverture.
   useLayoutEffect(() => {
    const updateHeight = () => { 
-      if (bodyRef.current) {
+      if (isOpen && bodyRef.current) {
         setHeight(bodyRef.current.scrollHeight); 
+      } else {
+        setHeight(0); 
       }
     };
     updateHeight();
@@ -39,7 +41,7 @@ function Collapse({ title, children }) {
       <div 
         className="collapse__body" 
         ref={bodyRef}
-        style={{ maxHeight: isOpen ? `${height}px` : "0" }} // max-height dynamique pour permettre la transition d'ouverture fluide
+        style={{ maxHeight: `${height}px` }} // max-height dynamique pour permettre la transition d'ouverture fluide
         id={contentId}
         aria-labelledby={buttonId}
         role="region" // Indique que c'est une région de contenu liée au bouton
